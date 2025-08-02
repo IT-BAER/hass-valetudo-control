@@ -7,7 +7,7 @@ A Home Assistant integration that provides joystick-like control for Valetudo-po
 - 🕹️ **Joystick Control**: Full joystick-like control for your robot vacuum
 - 🚀 **High-Resolution API**: Utilizes the new high-resolution manual control capability
 - 🔐 **Basic Auth Support**: Connect to your Valetudo robot with username/password authentication
-- 🎛️ **Frontend Card**: Custom Lovelace card with interactive joystick control
+- 🎛️ **Frontend Card**: Custom Lovelace card with interactive joystick control (separate installation)
 - 🔄 **Manual Control Toggle**: Enable/disable manual control on the robot
 - 🔋 **Battery Monitoring**: Monitor your robot's battery level
 - ⚡ **Quick Actions**: Dock robot and play sound
@@ -25,9 +25,13 @@ A Home Assistant integration that provides joystick-like control for Valetudo-po
 1. Install [HACS](https://hacs.xyz/docs/installation/prerequisites)
 2. Go to HACS > Integrations > Explore & Add Repositories
 3. Search for "Valetudo Control" and add this repository
-4. Restart Home Assistant
-5. Add the integration via Settings > Devices & Services > + Add Integration
-6. The frontend card will be automatically available in Lovelace after installation
+4. Install the integration from the repository
+5. Restart Home Assistant
+6. Add the integration via Settings > Devices & Services > + Add Integration
+7. To install the card, go to HACS > Frontend > Explore & Add Repositories
+8. Search for "Valetudo Control" and add this repository
+9. Install the card from the repository
+10. Add the card to your Lovelace dashboard
 
 ### 🔧 Manual Installation
 
@@ -47,7 +51,7 @@ A Home Assistant integration that provides joystick-like control for Valetudo-po
 
 ### 🎴 Frontend Card Setup
 
-Add the following to your Lovelace configuration:
+After installing the card through HACS, add the following to your Lovelace configuration:
 
 ```yaml
 - type: custom:valetudo-control-card
@@ -106,7 +110,7 @@ The integration uses the new high-resolution manual control API:
 
 ### 🖥️ Card Not Loading
 
-- Ensure the JavaScript file is in your `www` directory (copied from `dist/valetudo-control-card.js`)
+- Ensure the card is properly installed through HACS
 - Clear your browser cache
 - Check the browser console for errors
 

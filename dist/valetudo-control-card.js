@@ -196,7 +196,6 @@ class ValetudoControlCard extends LitElement {
     this._lastSent = { angle: null, velocity: null };
     this._lastSendTime = 0;
     this._pollingInterval = null;
-    this._pollingIntervalMs = 5000; // Poll every 5 seconds instead of 1 second
     this._debugMode = false; // Debug mode flag
     
     // Bind event handlers to preserve 'this' context
@@ -527,10 +526,6 @@ class ValetudoControlCard extends LitElement {
     }
   }
 
-  _cycleSpeed() {
-    this._speedIndex = (this._speedIndex + 1) % this.speedLevels.length;
-    this.requestUpdate();
-  }
 
   async _toggleManualControl() {
     if (!this.hass) {

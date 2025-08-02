@@ -6,7 +6,7 @@
   "domains": ["valetudo_control"],
   "iot_class": "local_polling",
   "integration_type": "integration",
-  "filename": "dist/valetudo-control-card.js",
   "logo": "logos/icon_128x128.png",
-  "content_in_root": false
+  "content_in_root": false,
+  "filename": "dist/valetudo-control-card.js"
 }
