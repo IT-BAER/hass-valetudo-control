@@ -20,18 +20,20 @@ A Home Assistant integration that provides joystick-like control for Valetudo-po
 
 ## 💻 Installation
 
-### 🧩 HACS Installation (Recommended)
+### 🧩 HACS Custom Repository Installation (Recommended)
 
 1. Install [HACS](https://hacs.xyz/docs/installation/prerequisites)
-2. Go to HACS > Integrations > Explore & Add Repositories
-3. Search for "Valetudo Control" and add this repository
-4. Install the integration from the repository
-5. Restart Home Assistant
-6. Add the integration via Settings > Devices & Services > + Add Integration
-7. To install the card, go to HACS > Frontend > Explore & Add Repositories
-8. Search for "Valetudo Control" and add this repository
-9. Install the card from the repository
-10. Add the card to your Lovelace dashboard
+2. Go to HACS > Integrations > ⋮ (three dots) > Custom repositories
+3. Add this repository URL (`https://github.com/Hypfer/hass-valetudo-control`) with category "Integration"
+4. Go back to HACS > Integrations > Explore & Add Repositories
+5. Search for "Valetudo Control" and install the integration
+6. Restart Home Assistant
+7. Add the integration via Settings > Devices & Services > + Add Integration
+8. To install the card, go to HACS > Frontend > ⋮ (three dots) > Custom repositories
+9. Add this repository URL (`https://github.com/Hypfer/hass-valetudo-control`) with category "Lovelace"
+10. Go back to HACS > Frontend > Explore & Add Repositories
+11. Search for "Valetudo Control" and install the card
+12. Add the card to your Lovelace dashboard
 
 ### 🔧 Manual Installation
 
@@ -55,10 +57,10 @@ After installing the card through HACS, add the following to your Lovelace confi
 
 ```yaml
 - type: custom:valetudo-control-card
-  entity: vacuum.your_valetudo_robot
+  entity: sensor.your_robot_battery
 ```
 
-Replace `vacuum.your_valetudo_robot` with your actual robot's valetudo vacuum entity ID.
+Replace `sensor.your_robot_battery` with your robot's battery sensor entity ID.
 
 ## 🎮 Usage
 
