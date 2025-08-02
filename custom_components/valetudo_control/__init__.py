@@ -20,8 +20,11 @@ async def async_setup(hass: HomeAssistant, config: dict) -> bool:
     """Set up the Valetudo Control component."""
     # Register the frontend card
     # Try HACS location first, then fall back to manual installation location
+    # Get the path to this integration directory
+    import os
+    integration_dir = os.path.dirname(__file__)
     card_paths = [
-        hass.config.path("dist/valetudo-control-card.js"),
+        os.path.join(integration_dir, "..", "..", "dist", "valetudo-control-card.js"),
         hass.config.path("www/valetudo-control-card.js")
     ]
     
