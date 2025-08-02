@@ -1,0 +1,13 @@
+{
+  "domain": "valetudo_control",
+  "name": "Valetudo Control",
+  "codeowners": ["@IT-BAER"],
+  "config_flow": true,
+  "dependencies": ["frontend"],
+  "documentation": "https://github.com/IT-BAER/hass-valetudo-control",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/IT-BAER/hass-valetudo-control/issues",
+  "requirements": ["aiohttp>=3.8.0"],
+  "version": "1.0.0",
+  "platforms": ["button", "sensor", "switch"]
+}

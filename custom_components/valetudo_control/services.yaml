@@ -1,0 +1,65 @@
+send_command:
+  name: Send command
+  description: Send a movement command to the robot
+  fields:
+    velocity:
+      name: Velocity
+      description: The velocity of the movement (-1.0 to 1.0)
+      required: true
+      example: 0.5
+      selector:
+        number:
+          min: -1.0
+          max: 1.0
+          step: 0.1
+    angle:
+      name: Angle
+      description: The angle of the movement in degrees
+      required: true
+      example: 45
+      selector:
+        number:
+          min: -180
+          max: 180
+          step: 1
+
+dock:
+  name: Dock
+  description: Send the robot to its dock
+
+play_sound:
+  name: Play sound
+  description: Play a locate sound on the robot
+
+set_manual_control_state:
+  name: Set manual control state
+  description: Enable or disable manual control on the robot
+  fields:
+    enable:
+      name: Enable
+      description: Whether to enable or disable manual control
+      required: true
+      example: true
+      selector:
+        boolean:
+
+get_water_usage_preset:
+  name: Get water usage preset
+  description: Get the current water usage preset of the robot
+
+set_water_usage_preset:
+  name: Set water usage preset
+  description: Set the water usage preset on the robot
+  fields:
+    preset:
+      name: Preset
+      description: The water usage preset to set
+      required: true
+      example: "off"
+      selector:
+        select:
+          options:
+            - "off"
+            - "low"
+            - "medium"
+            - "high"
