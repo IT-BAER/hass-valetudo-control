@@ -18,27 +18,8 @@ PLATFORMS = [Platform.BUTTON, Platform.SENSOR, Platform.SWITCH]
 
 async def async_setup(hass: HomeAssistant, config: dict) -> bool:
     """Set up the Valetudo Control component."""
-    # For HACS installations, the frontend card is automatically registered
-    # For manual installations, we need to register the card
-    try:
-        # Try to register the card for manual installations
-        import os
-        hass_config_dir = hass.config.path()
-        manual_card_path = os.path.join(hass_config_dir, "www", "valetudo-control-card.js")
-        if os.path.exists(manual_card_path):
-            await hass.http.async_register_static_paths([
-                StaticPathConfig(
-                    "/valetudo-control-card.js",
-                    manual_card_path,
-                    False
-                )
-            ])
-            add_extra_js_url(hass, "/valetudo-control-card.js")
-        # If the file doesn't exist, assume HACS installation and do nothing
-        # HACS will handle the frontend resource registration
-    except Exception as e:
-        _LOGGER.debug("Could not register frontend card: %s", e)
-    
+    # HACS will automatically register the frontend card
+    # For manual installations, users need to manually add the resource
     return True
 
 
